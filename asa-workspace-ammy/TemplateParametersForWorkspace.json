@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "asa-workspace-ammy"
+		},
+		"asa-workspace-ammy-WorkspaceDefaultSqlServer_connectionString": {
+			"value": ""
+		},
+		"asadatalake01_accountKey": {
+			"value": ""
+		},
+		"asastore01_connectionString": {
+			"value": ""
+		},
+		"ASA_CognitiveService1_properties_typeProperties_subscriptionId": {
+			"value": "d5317d68-1db9-4a3f-a224-75e4cd987cce"
+		},
+		"ASA_KeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://key-vault-ammy.vault.azure.net/"
+		},
+		"CognitiveRESTEndpoint_properties_typeProperties_url": {
+			"value": "https://cs-428398-ammy.cognitiveservices.azure.com/"
+		},
+		"asa-workspace-ammy-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://primarystorage1ammy.dfs.core.windows.net"
+		},
+		"asadatalake01_properties_typeProperties_url": {
+			"value": "https://primarystorage1ammy.dfs.core.windows.net"
+		}
+	}
+}
