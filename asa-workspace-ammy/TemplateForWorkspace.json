@@ -157,6 +157,373 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_comments_adls')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "asadatalake01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "wwi-comments.csv",
+						"folderPath": "bronze",
+						"fileSystem": "dev"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					},
+					{
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/asadatalake01')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimcity_adls')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "asadatalake01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "wwi-dimcity.csv",
+						"folderPath": "bronze",
+						"fileSystem": "dev"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": [
+					{
+						"name": "City Key",
+						"type": "String"
+					},
+					{
+						"name": "WWI City ID",
+						"type": "String"
+					},
+					{
+						"name": "City",
+						"type": "String"
+					},
+					{
+						"name": "State Province",
+						"type": "String"
+					},
+					{
+						"name": "Country",
+						"type": "String"
+					},
+					{
+						"name": "Continent",
+						"type": "String"
+					},
+					{
+						"name": "Sales Territory",
+						"type": "String"
+					},
+					{
+						"name": "Region",
+						"type": "String"
+					},
+					{
+						"name": "Subregion",
+						"type": "String"
+					},
+					{
+						"name": "Latest Recorded Population",
+						"type": "String"
+					},
+					{
+						"name": "Valid From",
+						"type": "String"
+					},
+					{
+						"name": "Valid To",
+						"type": "String"
+					},
+					{
+						"name": "Lineage Key",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/asadatalake01')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimcustomer_adls')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "asadatalake01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "wwi-dimcustomer.csv",
+						"folderPath": "bronze",
+						"fileSystem": "dev"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": [
+					{
+						"name": "Customer Key",
+						"type": "String"
+					},
+					{
+						"name": "WWI Customer ID",
+						"type": "String"
+					},
+					{
+						"name": "Customer",
+						"type": "String"
+					},
+					{
+						"name": "Bill To Customer",
+						"type": "String"
+					},
+					{
+						"name": "Category",
+						"type": "String"
+					},
+					{
+						"name": "Buying Group",
+						"type": "String"
+					},
+					{
+						"name": "Primary Contact",
+						"type": "String"
+					},
+					{
+						"name": "Postal Code",
+						"type": "String"
+					},
+					{
+						"name": "Valid From",
+						"type": "String"
+					},
+					{
+						"name": "Valid To",
+						"type": "String"
+					},
+					{
+						"name": "Lineage Key",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/asadatalake01')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimdate_adls')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "asadatalake01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "wwi-dimdate.csv",
+						"folderPath": "bronze",
+						"fileSystem": "dev"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "Day Number",
+						"type": "String"
+					},
+					{
+						"name": "Day",
+						"type": "String"
+					},
+					{
+						"name": "Month",
+						"type": "String"
+					},
+					{
+						"name": "Short Month",
+						"type": "String"
+					},
+					{
+						"name": "Calendar Month Number",
+						"type": "String"
+					},
+					{
+						"name": "Calendar Month Label",
+						"type": "String"
+					},
+					{
+						"name": "Calendar Year",
+						"type": "String"
+					},
+					{
+						"name": "Calendar Year Label",
+						"type": "String"
+					},
+					{
+						"name": "Fiscal Month Number",
+						"type": "String"
+					},
+					{
+						"name": "Fiscal Month Label",
+						"type": "String"
+					},
+					{
+						"name": "Fiscal Year",
+						"type": "String"
+					},
+					{
+						"name": "Fiscal Year Label",
+						"type": "String"
+					},
+					{
+						"name": "ISO Week Number",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/asadatalake01')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimemployee_adls')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "asadatalake01",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "wwi-dimemployee.csv",
+						"folderPath": "bronze",
+						"fileSystem": "dev"
+					},
+					"columnDelimiter": "|",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": [
+					{
+						"name": "Employee Key",
+						"type": "String"
+					},
+					{
+						"name": "WWI Employee ID",
+						"type": "String"
+					},
+					{
+						"name": "Employee",
+						"type": "String"
+					},
+					{
+						"name": "Preferred Name",
+						"type": "String"
+					},
+					{
+						"name": "Is Salesperson",
+						"type": "String"
+					},
+					{
+						"name": "Valid From",
+						"type": "String"
+					},
+					{
+						"name": "Valid To",
+						"type": "String"
+					},
+					{
+						"name": "Lineage Key",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/linkedServices/asadatalake01')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/ASA_CognitiveService1')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
