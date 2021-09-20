@@ -1,0 +1,20 @@
+{
+	"name": "AzureBlobStorage1",
+	"properties": {
+		"type": "RestResource",
+		"linkedServiceName": {
+			"referenceName": "ASA_CognitiveService1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"typeProperties": {
+			"relativeUrl": "text/analytics/v3.1-preview.3/sentiment?opinionMining=true"
+		},
+		"schema": [],
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
