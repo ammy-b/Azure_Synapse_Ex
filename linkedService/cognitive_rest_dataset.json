@@ -1,9 +1,9 @@
 {
 	"name": "cognitive_rest_dataset",
 	"properties": {
-		"type": "RestResource",
+		"type": "AzureBlobStorage",
 		"linkedServiceName": {
-			"referenceName": "ASA_CognitiveService1",
+			"referenceName": "cog_rest_dataset",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
