@@ -302,6 +302,86 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimcity_asa')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "SqlPoolTable",
+				"schema": [
+					{
+						"name": "CityKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "WWICityID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "City",
+						"type": "nvarchar"
+					},
+					{
+						"name": "StateProvince",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Country",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Continent",
+						"type": "nvarchar"
+					},
+					{
+						"name": "SalesTerritory",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Region",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Subregion",
+						"type": "nvarchar"
+					},
+					{
+						"name": "LatestRecordedPopulation",
+						"type": "bigint",
+						"precision": 19
+					},
+					{
+						"name": "ValidFrom",
+						"type": "datetime2",
+						"scale": 7
+					},
+					{
+						"name": "ValidTo",
+						"type": "datetime2",
+						"scale": 7
+					},
+					{
+						"name": "LineageKey",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "wwi",
+					"table": "DimCity"
+				},
+				"sqlPool": {
+					"referenceName": "sqlpool01",
+					"type": "SqlPoolReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/sqlPools/sqlpool01')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/wwi_dimcustomer_adls')]",
 			"type": "Microsoft.Synapse/workspaces/datasets",
 			"apiVersion": "2019-06-01-preview",
@@ -373,6 +453,77 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/linkedServices/asadatalake01')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimcustomer_asa')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "SqlPoolTable",
+				"schema": [
+					{
+						"name": "CustomerKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "WWICustomerID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Customer",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BillToCustomer",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Category",
+						"type": "nvarchar"
+					},
+					{
+						"name": "BuyingGroup",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PrimaryContact",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PostalCode",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ValidFrom",
+						"type": "datetime2",
+						"scale": 7
+					},
+					{
+						"name": "ValidTo",
+						"type": "datetime2",
+						"scale": 7
+					},
+					{
+						"name": "LineageKey",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "wwi",
+					"table": "DimCustomer"
+				},
+				"sqlPool": {
+					"referenceName": "sqlpool01",
+					"type": "SqlPoolReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/sqlPools/sqlpool01')]"
 			]
 		},
 		{
@@ -462,6 +613,90 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimdate_asa')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "SqlPoolTable",
+				"schema": [
+					{
+						"name": "Date",
+						"type": "date"
+					},
+					{
+						"name": "DayNumber",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Day",
+						"type": "nvarchar"
+					},
+					{
+						"name": "Month",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ShortMonth",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CalendarMonthNumber",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CalendarMonthLabel",
+						"type": "nvarchar"
+					},
+					{
+						"name": "CalendarYear",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "CalendarYearLabel",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FiscalMonthNumber",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "FiscalMonthLabel",
+						"type": "nvarchar"
+					},
+					{
+						"name": "FiscalYear",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "FiscalYearLabel",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ISOWeekNumber",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "wwi",
+					"table": "DimDate"
+				},
+				"sqlPool": {
+					"referenceName": "sqlpool01",
+					"type": "SqlPoolReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/sqlPools/sqlpool01')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/wwi_dimemployee_adls')]",
 			"type": "Microsoft.Synapse/workspaces/datasets",
 			"apiVersion": "2019-06-01-preview",
@@ -521,6 +756,65 @@
 			},
 			"dependsOn": [
 				"[concat(variables('workspaceId'), '/linkedServices/asadatalake01')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/wwi_dimemployee_asa')]",
+			"type": "Microsoft.Synapse/workspaces/datasets",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "SqlPoolTable",
+				"schema": [
+					{
+						"name": "EmployeeKey",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "WWIEmployeeID",
+						"type": "int",
+						"precision": 10
+					},
+					{
+						"name": "Employee",
+						"type": "nvarchar"
+					},
+					{
+						"name": "PreferredName",
+						"type": "nvarchar"
+					},
+					{
+						"name": "IsSalesperson",
+						"type": "bit"
+					},
+					{
+						"name": "ValidFrom",
+						"type": "datetime2",
+						"scale": 7
+					},
+					{
+						"name": "ValidTo",
+						"type": "datetime2",
+						"scale": 7
+					},
+					{
+						"name": "LineageKey",
+						"type": "int",
+						"precision": 10
+					}
+				],
+				"typeProperties": {
+					"schema": "wwi",
+					"table": "DimEmployee"
+				},
+				"sqlPool": {
+					"referenceName": "sqlpool01",
+					"type": "SqlPoolReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/sqlPools/sqlpool01')]"
 			]
 		},
 		{
